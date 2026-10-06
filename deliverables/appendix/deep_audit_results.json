@@ -1,0 +1,52 @@
+{
+    "tabudiff": {
+        "features": {
+            "amount": {
+                "wasserstein": 56.45495033450743,
+                "js_divergence": 0.12484973071627053
+            }
+        },
+        "mean_wd": 56.45495033450743,
+        "mean_js": 0.12484973071627053
+    },
+    "copula": {
+        "features": {
+            "amount": {
+                "wasserstein": 8.72930518651686,
+                "js_divergence": 0.001513817732261526
+            }
+        },
+        "mean_wd": 8.72930518651686,
+        "mean_js": 0.001513817732261526
+    },
+    "masked": {
+        "features": {
+            "amount": {
+                "wasserstein": 9.547418679977898,
+                "js_divergence": 0.0023852963369554673
+            }
+        },
+        "mean_wd": 9.547418679977898,
+        "mean_js": 0.0023852963369554673
+    },
+    "tvae": {
+        "features": {
+            "amount": {
+                "wasserstein": 17.620300320277114,
+                "js_divergence": 0.01117133555532773
+            }
+        },
+        "mean_wd": 17.620300320277114,
+        "mean_js": 0.01117133555532773
+    },
+    "ctgan": {
+        "features": {
+            "amount": {
+                "wasserstein": 46.355450437783105,
+                "js_divergence": 0.022351576490580026
+            }
+        },
+        "mean_wd": 46.355450437783105,
+        "mean_js": 0.022351576490580026
+    }
+}

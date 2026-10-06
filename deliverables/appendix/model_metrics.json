@@ -1,0 +1,562 @@
+{
+  "before_augmentation": {
+    "logistic_regression": {
+      "model": "logistic_regression",
+      "precision": 0.024027899824253074,
+      "recall": 0.8158508158508159,
+      "f1": 0.046680982167864815,
+      "roc_auc": 0.9351365805400857,
+      "pr_auc": 0.20279857570247078,
+      "confusion_matrix": [
+        [
+          482492,
+          71082
+        ],
+        [
+          395,
+          1750
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9991820032429948,
+          "recall": 0.871594402916322,
+          "f1-score": 0.9310374437629587,
+          "support": 553574.0
+        },
+        "1": {
+          "precision": 0.024027899824253074,
+          "recall": 0.8158508158508159,
+          "f1-score": 0.046680982167864815,
+          "support": 2145.0
+        },
+        "accuracy": 0.8713792402275251,
+        "macro avg": {
+          "precision": 0.511604951533624,
+          "recall": 0.8437226093835689,
+          "f1-score": 0.4888592129654118,
+          "support": 555719.0
+        },
+        "weighted avg": {
+          "precision": 0.9954180406075025,
+          "recall": 0.8713792402275251,
+          "f1-score": 0.9276239477152773,
+          "support": 555719.0
+        }
+      },
+      "feature_importance": {
+        "amount": 0.008878587500815965,
+        "balance_before": 0.0,
+        "balance_after": 0.0,
+        "device_id": 0.0,
+        "location_change_flag": 0.0032802069380495884,
+        "device_change_flag": 0.0,
+        "new_beneficiary_flag": 0.0,
+        "account_age_days": 0.0,
+        "kyc_mismatch_score": 0.0,
+        "risk_score": 0.0,
+        "balance_before_was_missing": 0.0010010485161046792,
+        "balance_after_was_missing": 0.0010010485161046792,
+        "device_id_was_missing": 0.0010010485161046792,
+        "account_age_days_was_missing": 0.0010010485161046792,
+        "kyc_mismatch_score_was_missing": 0.0010010485161046792,
+        "velocity_1h_was_missing": 0.0010010485161046792,
+        "velocity_24h_was_missing": 0.0010010485161046792,
+        "risk_score_was_missing": 0.0010010485161046792,
+        "timestamp_unix": 1.7147036769655664e-06,
+        "amount_outlier": 0.43024615674027367,
+        "velocity_1h_outlier": 0.0,
+        "velocity_24h_outlier": 0.0,
+        "risk_score_outlier": 0.0,
+        "velocity_1h": 0.004448979008216291,
+        "velocity_24h": 0.0004018165784505783,
+        "balance_delta": 0.0,
+        "balance_drain_pct": 0.0,
+        "amount_zscore": 0.22623081008724596,
+        "amount_pctile": 0.3608435124410437,
+        "high_value_flag": 0.06136611360853722,
+        "geo_distance_km": 0.0007279692445861973,
+        "hour_of_day": 0.018140291334867418,
+        "day_of_week": 0.17564460502259435,
+        "is_weekend": 0.08292106832910622,
+        "is_night": 2.637500469324344
+      }
+    },
+    "random_forest": {
+      "model": "random_forest",
+      "precision": 0.29533459995777916,
+      "recall": 0.6522144522144522,
+      "f1": 0.4065678581807614,
+      "roc_auc": 0.9778981617086369,
+      "pr_auc": 0.4919062152874447,
+      "confusion_matrix": [
+        [
+          550236,
+          3338
+        ],
+        [
+          746,
+          1399
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9986460537730815,
+          "recall": 0.9939700925260219,
+          "f1-score": 0.9963025867407357,
+          "support": 553574.0
+        },
+        "1": {
+          "precision": 0.29533459995777916,
+          "recall": 0.6522144522144522,
+          "f1-score": 0.4065678581807614,
+          "support": 2145.0
+        },
+        "accuracy": 0.992650962086954,
+        "macro avg": {
+          "precision": 0.6469903268654303,
+          "recall": 0.823092272370237,
+          "f1-score": 0.7014352224607485,
+          "support": 555719.0
+        },
+        "weighted avg": {
+          "precision": 0.9959313669107753,
+          "recall": 0.992650962086954,
+          "f1-score": 0.9940262906400785,
+          "support": 555719.0
+        }
+      },
+      "feature_importance": {
+        "amount": 0.23579741850358593,
+        "balance_before": 0.0,
+        "balance_after": 0.0,
+        "device_id": 0.0,
+        "location_change_flag": 0.0012632680148682092,
+        "device_change_flag": 0.0,
+        "new_beneficiary_flag": 0.0,
+        "account_age_days": 0.0,
+        "kyc_mismatch_score": 0.0,
+        "risk_score": 0.0,
+        "balance_before_was_missing": 0.0,
+        "balance_after_was_missing": 0.0,
+        "device_id_was_missing": 0.0,
+        "account_age_days_was_missing": 0.0,
+        "kyc_mismatch_score_was_missing": 0.0,
+        "velocity_1h_was_missing": 0.0,
+        "velocity_24h_was_missing": 0.0,
+        "risk_score_was_missing": 0.0,
+        "timestamp_unix": 0.018781254229677097,
+        "amount_outlier": 0.0965404588622882,
+        "velocity_1h_outlier": 0.0,
+        "velocity_24h_outlier": 0.0,
+        "risk_score_outlier": 0.0,
+        "velocity_1h": 0.03627584288793062,
+        "velocity_24h": 0.035813936825540335,
+        "balance_delta": 0.0,
+        "balance_drain_pct": 0.0,
+        "amount_zscore": 0.13536869363574486,
+        "amount_pctile": 0.20001047957161613,
+        "high_value_flag": 0.04633178313361735,
+        "geo_distance_km": 0.014838721929832896,
+        "hour_of_day": 0.07091151595557364,
+        "day_of_week": 0.005690897278127549,
+        "is_weekend": 0.00129969982444685,
+        "is_night": 0.1010760293471503
+      }
+    },
+    "xgboost": {
+      "model": "xgboost",
+      "precision": 0.19122980547312893,
+      "recall": 0.5407925407925408,
+      "f1": 0.2825478017293874,
+      "roc_auc": 0.9488245297101927,
+      "pr_auc": 0.35490887252654957,
+      "confusion_matrix": [
+        [
+          548668,
+          4906
+        ],
+        [
+          985,
+          1160
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9982079602949497,
+          "recall": 0.9911375895544227,
+          "f1-score": 0.9946602104553278,
+          "support": 553574.0
+        },
+        "1": {
+          "precision": 0.19122980547312893,
+          "recall": 0.5407925407925408,
+          "f1-score": 0.2825478017293874,
+          "support": 2145.0
+        },
+        "accuracy": 0.9893993187204324,
+        "macro avg": {
+          "precision": 0.5947188828840393,
+          "recall": 0.7659650651734817,
+          "f1-score": 0.6386040060923577,
+          "support": 555719.0
+        },
+        "weighted avg": {
+          "precision": 0.9950931340210725,
+          "recall": 0.9893993187204324,
+          "f1-score": 0.9919115531002308,
+          "support": 555719.0
+        }
+      },
+      "feature_importance": {
+        "amount": 0.48475727438926697,
+        "balance_before": 0.0,
+        "balance_after": 0.0,
+        "device_id": 0.0,
+        "location_change_flag": 0.02074318565428257,
+        "device_change_flag": 0.0,
+        "new_beneficiary_flag": 0.0,
+        "account_age_days": 0.0,
+        "kyc_mismatch_score": 0.0,
+        "risk_score": 0.0,
+        "balance_before_was_missing": 0.0,
+        "balance_after_was_missing": 0.0,
+        "device_id_was_missing": 0.0,
+        "account_age_days_was_missing": 0.0,
+        "kyc_mismatch_score_was_missing": 0.0,
+        "velocity_1h_was_missing": 0.0,
+        "velocity_24h_was_missing": 0.0,
+        "risk_score_was_missing": 0.0,
+        "timestamp_unix": 0.021375250071287155,
+        "amount_outlier": 0.0060309721156954765,
+        "velocity_1h_outlier": 0.0,
+        "velocity_24h_outlier": 0.0,
+        "risk_score_outlier": 0.0,
+        "velocity_1h": 0.024726826697587967,
+        "velocity_24h": 0.02410881593823433,
+        "balance_delta": 0.0,
+        "balance_drain_pct": 0.0,
+        "amount_zscore": 0.03057699464261532,
+        "amount_pctile": 0.0,
+        "high_value_flag": 0.01670212112367153,
+        "geo_distance_km": 0.0176149420440197,
+        "hour_of_day": 0.047762878239154816,
+        "day_of_week": 0.015990249812602997,
+        "is_weekend": 0.0,
+        "is_night": 0.28961050510406494
+      }
+    },
+    "isolation_forest": {
+      "model": "isolation_forest",
+      "precision": 0.17947843872507244,
+      "recall": 0.4909090909090909,
+      "f1": 0.26285571642536193,
+      "roc_auc": 0.9180406343275265,
+      "pr_auc": 0.14321995892140976,
+      "confusion_matrix": [
+        [
+          548760,
+          4814
+        ],
+        [
+          1092,
+          1053
+        ]
+      ]
+    }
+  },
+  "after_augmentation": {
+    "logistic_regression": {
+      "model": "logistic_regression",
+      "precision": 0.1438004402054292,
+      "recall": 0.5482517482517483,
+      "f1": 0.22784074396977622,
+      "roc_auc": 0.8583143359932011,
+      "pr_auc": 0.12804597107718574,
+      "confusion_matrix": [
+        [
+          546572,
+          7002
+        ],
+        [
+          969,
+          1176
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9982302695140638,
+          "recall": 0.9873512845617749,
+          "f1-score": 0.9927609741035224,
+          "support": 553574.0
+        },
+        "1": {
+          "precision": 0.1438004402054292,
+          "recall": 0.5482517482517483,
+          "f1-score": 0.22784074396977622,
+          "support": 2145.0
+        },
+        "accuracy": 0.985656419881271,
+        "macro avg": {
+          "precision": 0.5710153548597465,
+          "recall": 0.7678015164067615,
+          "f1-score": 0.6103008590366493,
+          "support": 555719.0
+        },
+        "weighted avg": {
+          "precision": 0.9949322862097911,
+          "recall": 0.985656419881271,
+          "f1-score": 0.9898084857170593,
+          "support": 555719.0
+        }
+      },
+      "feature_importance": {
+        "amount": 0.0063895230271430745,
+        "balance_before": 0.008926397065217962,
+        "balance_after": 0.009968041881593039,
+        "device_id": 0.0,
+        "location_change_flag": 0.1093058079473941,
+        "device_change_flag": 0.0,
+        "new_beneficiary_flag": 0.0,
+        "account_age_days": 4.006726031163639e-06,
+        "kyc_mismatch_score": 2.3393959302588172e-07,
+        "risk_score": 0.0,
+        "balance_before_was_missing": 0.4689737046078932,
+        "balance_after_was_missing": 0.4689737046078932,
+        "device_id_was_missing": 0.4689737046078932,
+        "account_age_days_was_missing": 0.4689737046078932,
+        "kyc_mismatch_score_was_missing": 0.4689737046078932,
+        "velocity_1h_was_missing": 0.4689737046078932,
+        "velocity_24h_was_missing": 0.4689737046078932,
+        "risk_score_was_missing": 0.4689737046078932,
+        "timestamp_unix": 1.6150705168797595e-06,
+        "amount_outlier": 0.09909417955183875,
+        "velocity_1h_outlier": 0.0,
+        "velocity_24h_outlier": 0.0,
+        "risk_score_outlier": 0.0,
+        "velocity_1h": 0.008345098681841563,
+        "velocity_24h": 0.0005210908783953404,
+        "balance_delta": 0.0010417539065333712,
+        "balance_drain_pct": 0.0,
+        "amount_zscore": 0.21801822334407692,
+        "amount_pctile": 0.057323631145098086,
+        "high_value_flag": 0.010905815548950723,
+        "geo_distance_km": 0.0019118284639270391,
+        "hour_of_day": 0.03165475106561186,
+        "day_of_week": 0.2748916213513083,
+        "is_weekend": 0.007652871692089636,
+        "is_night": 0.22095616917352937
+      }
+    },
+    "random_forest": {
+      "model": "random_forest",
+      "precision": 0.5385913116828343,
+      "recall": 0.5953379953379954,
+      "f1": 0.5655447298494243,
+      "roc_auc": 0.977696903300707,
+      "pr_auc": 0.5787384753233222,
+      "confusion_matrix": [
+        [
+          552480,
+          1094
+        ],
+        [
+          868,
+          1277
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9984313668794321,
+          "recall": 0.9980237511154787,
+          "f1-score": 0.9982275173860489,
+          "support": 553574.0
+        },
+        "1": {
+          "precision": 0.5385913116828343,
+          "recall": 0.5953379953379954,
+          "f1-score": 0.5655447298494243,
+          "support": 2145.0
+        },
+        "accuracy": 0.996469438691137,
+        "macro avg": {
+          "precision": 0.7685113392811331,
+          "recall": 0.796680873226737,
+          "f1-score": 0.7818861236177366,
+          "support": 555719.0
+        },
+        "weighted avg": {
+          "precision": 0.9966564466078619,
+          "recall": 0.996469438691137,
+          "f1-score": 0.996557420485878,
+          "support": 555719.0
+        }
+      },
+      "feature_importance": {
+        "amount": 0.056125920505431824,
+        "balance_before": 0.0,
+        "balance_after": 5.364983719381346e-05,
+        "device_id": 0.0,
+        "location_change_flag": 0.00020945056646708583,
+        "device_change_flag": 0.0,
+        "new_beneficiary_flag": 0.0,
+        "account_age_days": 0.0,
+        "kyc_mismatch_score": 0.0,
+        "risk_score": 0.0,
+        "balance_before_was_missing": 0.04702869936699025,
+        "balance_after_was_missing": 0.039165892855654416,
+        "device_id_was_missing": 0.04858830257202684,
+        "account_age_days_was_missing": 0.0591540314957475,
+        "kyc_mismatch_score_was_missing": 0.06546690057602392,
+        "velocity_1h_was_missing": 0.059448812634073,
+        "velocity_24h_was_missing": 0.07716233433067242,
+        "risk_score_was_missing": 0.08279750526413375,
+        "timestamp_unix": 0.003754109174509038,
+        "amount_outlier": 0.01562326404095305,
+        "velocity_1h_outlier": 0.0,
+        "velocity_24h_outlier": 0.0,
+        "risk_score_outlier": 0.0,
+        "velocity_1h": 0.12941185496394383,
+        "velocity_24h": 0.14349504665898868,
+        "balance_delta": 0.0,
+        "balance_drain_pct": 0.0,
+        "amount_zscore": 0.03164717249666903,
+        "amount_pctile": 0.04671835607721216,
+        "high_value_flag": 0.012409033144346384,
+        "geo_distance_km": 0.0038953827247683276,
+        "hour_of_day": 0.04120696151987471,
+        "day_of_week": 0.019394634953070745,
+        "is_weekend": 0.006639425636574358,
+        "is_night": 0.010603258604674875
+      }
+    },
+    "xgboost": {
+      "model": "xgboost",
+      "precision": 0.14988662131519273,
+      "recall": 0.6163170163170163,
+      "f1": 0.24113087095303237,
+      "roc_auc": 0.9641481180529257,
+      "pr_auc": 0.41065608697337186,
+      "confusion_matrix": [
+        [
+          546076,
+          7498
+        ],
+        [
+          823,
+          1322
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9984951517556259,
+          "recall": 0.9864552887238202,
+          "f1-score": 0.9924387059019167,
+          "support": 553574.0
+        },
+        "1": {
+          "precision": 0.14988662131519273,
+          "recall": 0.6163170163170163,
+          "f1-score": 0.24113087095303237,
+          "support": 2145.0
+        },
+        "accuracy": 0.9850266051727582,
+        "macro avg": {
+          "precision": 0.5741908865354093,
+          "recall": 0.8013861525204182,
+          "f1-score": 0.6167847884274745,
+          "support": 555719.0
+        },
+        "weighted avg": {
+          "precision": 0.9952196378757788,
+          "recall": 0.9850266051727582,
+          "f1-score": 0.989538759515406,
+          "support": 555719.0
+        }
+      },
+      "feature_importance": {
+        "amount": 0.13049225509166718,
+        "balance_before": 0.0,
+        "balance_after": 0.0,
+        "device_id": 0.0,
+        "location_change_flag": 0.004293111152946949,
+        "device_change_flag": 0.0,
+        "new_beneficiary_flag": 0.0,
+        "account_age_days": 0.0,
+        "kyc_mismatch_score": 0.0,
+        "risk_score": 0.0,
+        "balance_before_was_missing": 0.052903201431035995,
+        "balance_after_was_missing": 0.0,
+        "device_id_was_missing": 0.0,
+        "account_age_days_was_missing": 0.0,
+        "kyc_mismatch_score_was_missing": 0.0,
+        "velocity_1h_was_missing": 0.0,
+        "velocity_24h_was_missing": 0.0,
+        "risk_score_was_missing": 0.0,
+        "timestamp_unix": 0.006785945501178503,
+        "amount_outlier": 0.002387738088145852,
+        "velocity_1h_outlier": 0.0,
+        "velocity_24h_outlier": 0.0,
+        "risk_score_outlier": 0.0,
+        "velocity_1h": 0.010748586617410183,
+        "velocity_24h": 0.6214032173156738,
+        "balance_delta": 0.0,
+        "balance_drain_pct": 0.0,
+        "amount_zscore": 0.0063612861558794975,
+        "amount_pctile": 0.026455724611878395,
+        "high_value_flag": 0.0020357498433440924,
+        "geo_distance_km": 0.003381867427378893,
+        "hour_of_day": 0.011009132489562035,
+        "day_of_week": 0.004360843915492296,
+        "is_weekend": 0.0,
+        "is_night": 0.11738137900829315
+      }
+    }
+  },
+  "best_model": "random_forest",
+  "shap": {},
+  "training_info": {
+    "original_train_size": 1296675,
+    "synthetic_size": 58338,
+    "augmented_train_size": 1355013,
+    "test_size": 555719,
+    "n_features": 35,
+    "feature_names": [
+      "amount",
+      "balance_before",
+      "balance_after",
+      "device_id",
+      "location_change_flag",
+      "device_change_flag",
+      "new_beneficiary_flag",
+      "account_age_days",
+      "kyc_mismatch_score",
+      "risk_score",
+      "balance_before_was_missing",
+      "balance_after_was_missing",
+      "device_id_was_missing",
+      "account_age_days_was_missing",
+      "kyc_mismatch_score_was_missing",
+      "velocity_1h_was_missing",
+      "velocity_24h_was_missing",
+      "risk_score_was_missing",
+      "timestamp_unix",
+      "amount_outlier",
+      "velocity_1h_outlier",
+      "velocity_24h_outlier",
+      "risk_score_outlier",
+      "velocity_1h",
+      "velocity_24h",
+      "balance_delta",
+      "balance_drain_pct",
+      "amount_zscore",
+      "amount_pctile",
+      "high_value_flag",
+      "geo_distance_km",
+      "hour_of_day",
+      "day_of_week",
+      "is_weekend",
+      "is_night"
+    ]
+  }
+}

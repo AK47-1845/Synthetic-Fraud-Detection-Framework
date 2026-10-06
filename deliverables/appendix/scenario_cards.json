@@ -1,0 +1,94 @@
+[
+  {
+    "scenario_name": "Digital Arrest Scam",
+    "description": "Victim receives a fraudulent call from someone impersonating law enforcement or government authority, claiming the victim is involved in a crime. Under extreme psychological pressure and fear of arrest, the victim is coerced into making multiple rapid fund transfers to 'clear' their name or 'secure' their assets.",
+    "trigger_behavior": "5-8 rapid fund transfers within a 1-2 hour window, each to a new and previously unseen beneficiary, with escalating amounts and culminating in near-complete account drainage.",
+    "key_risk_signals": [
+      "Transaction velocity 10x+ above customer baseline",
+      "Multiple new beneficiaries added within same session",
+      "Escalating transfer amounts (panic pattern)",
+      "Transactions during unusual hours (late night / early morning)",
+      "Near-total account balance drainage within 2 hours",
+      "No prior history of such transfer patterns",
+      "Transfer types switching between NEFT/RTGS/UPI rapidly"
+    ],
+    "data_manifestation": "Cluster of 5-8 rows for same customer_id within 1-2 hour window, all with new_beneficiary_flag=1, high velocity_1h, amounts increasing progressively, balance_drain_pct approaching 1.0",
+    "rarity_explanation": "Digital arrest scams are an emerging fraud pattern not captured in historical training data. They represent <0.01% of all transactions but cause catastrophic financial loss per incident. Traditional fraud models trained on card fraud or account takeover patterns completely miss this behavioral signature.",
+    "testing_value": "Stress-tests whether fraud detection systems can identify coercion-driven transfer cascades as distinct from legitimate batch payments or business transfers. Critical for emerging market fraud detection."
+  },
+  {
+    "scenario_name": "Mule Account Funneling",
+    "description": "A compromised or deliberately opened account is used to receive multiple small deposits from various sources (victims or other mules), then rapidly funnel the aggregated amount to a single destination account controlled by the fraud ring.",
+    "trigger_behavior": "8-20 small inbound transfers from unique senders within 24 hours, followed by a single large outbound transfer of ~90% of total received.",
+    "key_risk_signals": [
+      "High inbound transaction count from diverse senders",
+      "Single large outbound transfer shortly after accumulation",
+      "Account with low prior activity serving as pass-through",
+      "Time gap between last inbound and outbound < 4 hours",
+      "Outbound amount ~85-95% of total inbound (mule commission deducted)"
+    ],
+    "data_manifestation": "Fan-in pattern: many rows with same customer_id as destination, different source IDs, followed by one large outbound row. velocity_24h very high.",
+    "rarity_explanation": "Mule accounts are rare in legitimate customer populations but critical nodes in fraud networks. Individual transactions appear normal; the pattern is only visible in aggregate.",
+    "testing_value": "Tests graph-aware and sequence-aware fraud detection. Simple threshold models miss this pattern entirely."
+  },
+  {
+    "scenario_name": "Synthetic Identity Fraud",
+    "description": "Fraudster creates a fabricated identity by combining real and fictitious information (real SSN + fake name + fake address). The synthetic identity is used to open accounts, build credit history, and eventually 'bust out' with maximum credit.",
+    "trigger_behavior": "New account with identity signals that don't fully correlate \u2014 low name-email similarity, free email provider, inconsistent phone validation, short credit history but high credit limit request.",
+    "key_risk_signals": [
+      "KYC mismatch score > 0.7",
+      "Account age < 30 days at time of large transaction",
+      "Free email provider with name-email divergence",
+      "Phone validation failures",
+      "High credit limit request relative to stated income",
+      "Multiple recent applications"
+    ],
+    "data_manifestation": "Single row per identity with high kyc_mismatch_score, low account_age_days, and application-level fraud flags.",
+    "rarity_explanation": "Synthetic identities pass basic KYC checks because parts of the identity are real. They represent a growing but underrepresented category in fraud datasets.",
+    "testing_value": "Tests identity verification systems and application fraud scoring models."
+  },
+  {
+    "scenario_name": "Bust-out / First-Party Fraud",
+    "description": "A customer (or synthetic identity) builds a trusted transaction history over months, then suddenly maxes out credit lines and disappears with the funds.",
+    "trigger_behavior": "6+ months of normal, low-value activity followed by sudden high-value transactions that drain available credit/balance within 48 hours.",
+    "key_risk_signals": [
+      "Dramatic increase in transaction amounts (amount_zscore > 4.0)",
+      "Transaction velocity spike after dormancy",
+      "New beneficiaries added during drain phase",
+      "Credit utilization jumping from <20% to >90%",
+      "Activity pattern break from established baseline"
+    ],
+    "data_manifestation": "Time-series pattern: many low-amount rows over weeks/months, then sharp spike rows with high amounts, new beneficiaries, and high velocity.",
+    "rarity_explanation": "Bust-out fraud requires patience and investment from the fraudster. The normal-activity phase makes the customer appear legitimate in any cross-sectional analysis.",
+    "testing_value": "Tests temporal pattern detection and behavioral baseline comparison."
+  },
+  {
+    "scenario_name": "Account Takeover",
+    "description": "Fraudster gains unauthorized access to a legitimate customer's account through phishing, credential stuffing, or SIM swap, then immediately makes high-value transfers.",
+    "trigger_behavior": "Device and/or location change immediately followed by large fund transfer to new beneficiary.",
+    "key_risk_signals": [
+      "Device change flag = 1",
+      "Location change flag = 1",
+      "New beneficiary in same session",
+      "Transaction during unusual hours for this customer",
+      "Amount significantly above customer average"
+    ],
+    "data_manifestation": "Single or few rows with device_change_flag=1, location_change_flag=1, new_beneficiary_flag=1, high amount_zscore.",
+    "rarity_explanation": "Account takeover is rare per-customer but has high impact. The legitimate owner's historical pattern provides strong contrast.",
+    "testing_value": "Tests device fingerprinting and session anomaly detection."
+  },
+  {
+    "scenario_name": "Transaction Burst",
+    "description": "Abnormally high number of transactions in a short time window, potentially indicating automated fraud, card testing, or compromised payment terminal.",
+    "trigger_behavior": "20+ transactions within 1 hour from same customer, vs baseline of 1-2 per day.",
+    "key_risk_signals": [
+      "velocity_1h > 20",
+      "Amounts may be small (card testing) or mixed",
+      "Same merchant category repeated",
+      "Automated feel \u2014 regular intervals"
+    ],
+    "data_manifestation": "Many rows for same customer_id within 1-hour window, velocity_1h >> baseline.",
+    "rarity_explanation": "Legitimate burst transactions exist (e.g., holiday shopping) but at much lower velocity. Malicious bursts are very rare.",
+    "testing_value": "Tests velocity-based rules and threshold calibration."
+  }
+]

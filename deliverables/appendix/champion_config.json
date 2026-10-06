@@ -1,0 +1,14 @@
+{
+    "trial_name": "Base_Aug_RF_NE150_MD15_CWbalanced",
+    "optimal_threshold": 0.9699999999999999,
+    "pr_auc": 0.30013754241001894,
+    "roc_auc": 0.9500537726353968,
+    "opt_f1": 0.41442786069651744,
+    "opt_precision": 0.44426666666666664,
+    "opt_recall": 0.3883449883449883,
+    "opt_fp": 1042,
+    "opt_tp": 833,
+    "default_f1": 0.19690307780539093,
+    "default_precision": 0.11403897254207263,
+    "default_fp": 12003
+}
